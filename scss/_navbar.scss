@@ -1,0 +1,53 @@
+.navbar {
+  background: $white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+  margin-bottom: 48px;
+
+  //mobile
+  padding: 16px 30px;
+  min-height: 80px;
+
+  //desktop
+  @include respond-above(lg) {
+    padding: 24px 80px;
+  }
+
+  .title {
+    //mobile
+    @include font-size(14);
+    @include line-height(20);
+    font-weight: 800;
+
+    //desktop
+    @include respond-above(lg) {
+      @include font-size(24);
+      @include line-height(33);
+    }
+  }
+
+  .dark-mode {
+    //mobile
+    @include font-size(12);
+    @include line-height(16);
+    font-weight: 600;
+
+    //desktop
+    @include respond-above(lg) {
+      @include font-size(16);
+      @include line-height(22);
+      font-weight: 600;
+    }
+  }
+  .io-moon-outline {
+    //mobile
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+
+    //desktop
+    @include respond-above(lg) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

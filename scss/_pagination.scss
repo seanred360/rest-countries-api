@@ -1,0 +1,22 @@
+.pagination-container {
+    position: relative;
+
+  ul.pagination {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+  }
+
+  .page-item {
+      margin: 5px 5px;
+      cursor: pointer;
+
+      &.active {
+          background: blue;
+      }
+
+      &:hover {
+          color: blue;
+      }
+  }
+
+}

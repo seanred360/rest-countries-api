@@ -1,0 +1,28 @@
+.grid-squares {
+  //mobile styles
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr;
+  grid-row-gap: 40px;
+  margin: 32px 0;
+
+  @include respond-above(sm) {
+    grid-template-columns: auto auto;
+    grid-column-gap: 5vh;
+    grid-row-gap: 5vh;
+  }
+
+  @include respond-above(lg) {
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 5vh;
+    grid-row-gap: 5vh;
+    margin-bottom: 65px;
+  }
+
+  @include respond-above(xxl) {
+    grid-template-columns: auto auto auto auto;
+    grid-column-gap: auto;
+    grid-row-gap: auto;
+  }
+}

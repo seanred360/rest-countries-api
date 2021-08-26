@@ -1,0 +1,66 @@
+.dropdown {
+  //mobile styles
+  margin-top: 40px;
+  @include font-size(12);
+
+  //desktop styles
+  @include respond-above(md) {
+    margin: 0;
+    @include font-size(14);
+    @include line-height(20);
+  }
+
+  .dropdown-toggle {
+    width: 200px;
+    height: 48px;
+    padding: 14px;
+    padding-left: 24px;
+    outline: none;
+    border: none;
+    background: $white;
+    box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+    border-radius: 5px;
+    text-align: left;
+    @include line-height(20);
+
+    .chevron-icon {
+      width: 10px;
+      height: 10px;
+    }
+
+    @include respond-above(lg) {
+      height: 56px;
+    }
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    width: 200px;
+    margin-top: 4px;
+    padding: 1rem;
+    padding-left: 24px;
+    background: $white;
+    box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+    border-radius: 5px;
+    text-align: left;
+    @include line-height(22);
+
+    @include respond-above(md) {
+      @include line-height(38);
+    }
+
+    .dropdown-item {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      border: none;
+      background: none;
+      color: $black;
+      text-align: left;
+
+      &:hover {
+        background: rgba(0, 26, 255, 0.575);
+      }
+    }
+  }
+}

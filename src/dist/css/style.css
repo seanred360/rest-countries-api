@@ -1,0 +1,360 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: block;
+  position: relative;
+  font-family: "Nunito Sans", sans-serif;
+  background: #f2f2f2;
+  background-repeat: no-repeat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.5625rem;
+  padding: 0;
+  margin: 0;
+  color: #070724;
+}
+
+body a {
+  text-decoration: none;
+}
+
+body ul {
+  list-style: none;
+}
+
+.container {
+  margin: 0px 16px;
+  max-width: 1200px;
+}
+
+@media (min-width: 992px) {
+  .container {
+    margin: auto;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-jc-sb {
+  justify-content: space-between;
+}
+
+.flex-jc-c {
+  justify-content: center;
+}
+
+.flex-ai-c {
+  align-items: center;
+}
+
+@media (max-width: 575px) {
+  .hide-for-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 576px) {
+  .hide-for-desktop {
+    display: none;
+  }
+}
+
+.navbar {
+  background: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+  margin-bottom: 48px;
+  padding: 16px 30px;
+  min-height: 80px;
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    padding: 24px 80px;
+  }
+}
+
+.navbar .title {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 800;
+}
+
+@media (min-width: 992px) {
+  .navbar .title {
+    font-size: 1.5rem;
+    line-height: 2.0625rem;
+  }
+}
+
+.navbar .dark-mode {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+}
+
+@media (min-width: 992px) {
+  .navbar .dark-mode {
+    font-size: 1rem;
+    line-height: 1.375rem;
+    font-weight: 600;
+  }
+}
+
+.navbar .io-moon-outline {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+}
+
+@media (min-width: 992px) {
+  .navbar .io-moon-outline {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.search-and-dropdown-row {
+  display: block;
+}
+
+@media (min-width: 992px) {
+  .search-and-dropdown-row {
+    display: flex;
+    justify-content: space-between;
+    max-height: 56px;
+    align-items: center;
+    margin: 45px 0px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.search-bar {
+  position: relative;
+  margin: 24px 0px;
+}
+
+.search-bar ::placeholder,
+.search-bar :-ms-input-placeholder,
+.search-bar ::-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  /* Internet Explorer 10-11 */
+  /* Microsoft Edge */
+  color: #848484;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  opacity: 1;
+  /* Firefox */
+}
+
+.search-bar input {
+  height: 56px;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  padding: 14px;
+  padding-left: 74px;
+}
+
+@media (min-width: 992px) {
+  .search-bar input {
+    width: 480px;
+    padding: 18px;
+    padding-left: 71px;
+  }
+}
+
+.search-bar .search-icon {
+  width: 18px;
+  height: 18px;
+  top: 18px;
+  left: 32px;
+  position: absolute;
+  color: #848484;
+}
+
+.dropdown {
+  margin-top: 40px;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .dropdown {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+.dropdown .dropdown-toggle {
+  width: 200px;
+  height: 48px;
+  padding: 14px;
+  padding-left: 24px;
+  outline: none;
+  border: none;
+  background: white;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+  border-radius: 5px;
+  text-align: left;
+  line-height: 1.25rem;
+}
+
+.dropdown .dropdown-toggle .chevron-icon {
+  width: 10px;
+  height: 10px;
+}
+
+@media (min-width: 992px) {
+  .dropdown .dropdown-toggle {
+    height: 56px;
+  }
+}
+
+.dropdown .dropdown-menu {
+  position: absolute;
+  width: 200px;
+  margin-top: 4px;
+  padding: 1rem;
+  padding-left: 24px;
+  background: white;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+  border-radius: 5px;
+  text-align: left;
+  line-height: 1.375rem;
+}
+
+@media (min-width: 768px) {
+  .dropdown .dropdown-menu {
+    line-height: 2.375rem;
+  }
+}
+
+.dropdown .dropdown-menu .dropdown-item {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  color: #070724;
+  text-align: left;
+}
+
+.dropdown .dropdown-menu .dropdown-item:hover {
+  background: rgba(0, 26, 255, 0.575);
+}
+
+.grid-squares {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr;
+  grid-row-gap: 40px;
+  margin: 32px 0;
+}
+
+@media (min-width: 576px) {
+  .grid-squares {
+    grid-template-columns: auto auto;
+    grid-column-gap: 5vh;
+    grid-row-gap: 5vh;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-squares {
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 5vh;
+    grid-row-gap: 5vh;
+    margin-bottom: 65px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .grid-squares {
+    grid-template-columns: auto auto auto auto;
+    grid-column-gap: auto;
+    grid-row-gap: auto;
+  }
+}
+
+.country-box {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  max-width: 264px;
+  max-height: 336px;
+  background: white;
+  box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.0294384);
+  border-radius: 5px;
+}
+
+.country-box .flag {
+  width: 264px;
+  height: 160px;
+}
+
+.country-box .country-stats {
+  margin-left: 24px;
+}
+
+.country-box .country-stats .country-name {
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+  font-weight: 800;
+  margin-top: 24px;
+  margin-bottom: 1rem;
+}
+
+.country-box .country-stats .font-600 {
+  font-weight: 600;
+}
+
+.country-box .country-stats .font-300 {
+  font-weight: 300;
+}
+
+.country-box .country-stats p {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  font-weight: 300;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.pagination-container {
+  position: relative;
+}
+
+.pagination-container ul.pagination {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+}
+
+.pagination-container .page-item {
+  margin: 5px 5px;
+  cursor: pointer;
+}
+
+.pagination-container .page-item.active {
+  background: blue;
+}
+
+.pagination-container .page-item:hover {
+  color: blue;
+}
+/*# sourceMappingURL=style.css.map */

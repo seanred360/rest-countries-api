@@ -1,0 +1,46 @@
+.search-bar {
+  position: relative;
+  margin: 24px 0px;
+
+  // override default placeholder text color
+  ::placeholder,
+  :-ms-input-placeholder,
+  ::-ms-input-placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    /* Internet Explorer 10-11 */
+    /* Microsoft Edge */
+    color: #848484;
+    font-family: "Nunito Sans", sans-serif;
+    @include font-size(14);
+    @include line-height(20);
+    opacity: 1; /* Firefox */
+  }
+
+  input {
+    height: 56px;
+    box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+    border: none;
+    border-radius: 5px;
+
+    //mobile
+    width: 100%;
+    padding: 14px;
+    padding-left: 74px;
+
+    //desktop
+    @include respond-above(lg) {
+      width: 480px;
+      padding: 18px;
+      padding-left: 71px;
+    }
+  }
+
+  .search-icon {
+    width: 18px;
+    height: 18px;
+    top: 18px;
+    left: 32px;
+    position: absolute;
+    color: #848484;
+  }
+}

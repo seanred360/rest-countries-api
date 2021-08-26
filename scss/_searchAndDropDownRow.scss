@@ -1,0 +1,15 @@
+.search-and-dropdown-row {
+  //mobile styles
+  display: block;
+
+  //desktop styles
+  @include respond-above(lg) {
+    display: flex;
+    justify-content: space-between;
+    max-height: 56px;
+    align-items: center;
+    margin: 45px 0px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

@@ -1,0 +1,42 @@
+.country-box {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  max-width: 264px;
+  max-height: 336px;
+  background: $white;
+  box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.0294384);
+  border-radius: 5px;
+
+  .flag {
+    width: 264px;
+    height: 160px;
+  }
+
+  .country-stats {
+    margin-left: 24px;
+
+    .country-name {
+      @include font-size(18);
+      @include line-height(26);
+      font-weight: 800;
+      margin-top: 24px;
+      margin-bottom: 1rem;
+    }
+
+    .font-600 {
+      font-weight: 600;
+    }
+
+    .font-300 {
+      font-weight: 300;
+    }
+
+    p {
+      @include font-size(14);
+      @include line-height(16);
+      font-weight: 300;
+      margin: 0;
+      margin-bottom: 8px;
+    }
+  }
+}
