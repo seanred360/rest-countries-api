@@ -1,13 +1,12 @@
 import React, { Component } from "react";
+import axios from "axios";
+import _ from "lodash";
 import NavBar from "./common/navBar";
 import SearchBar from "./common/searchbar";
 import DropDownBox from "./common/dropDownBox";
 import GridSquares from "./gridSquares";
 import Pagination from "./common/pagination";
 import { paginate } from "../utils/paginate";
-//import { countries } from "../data";
-import _ from "lodash";
-import axios from "axios";
 
 class RestCountriesApp extends Component {
   state = {
@@ -40,7 +39,6 @@ class RestCountriesApp extends Component {
   };
 
   handlesortCategorySelect = (sortCategory, sortValue) => {
-    console.log(sortCategory, sortValue);
     this.setState({
       sortCategory: sortCategory.toLowerCase(),
       sortValue,
