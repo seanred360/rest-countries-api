@@ -2,7 +2,6 @@
   //mobile styles
   margin-top: 40px;
   @include font-size(12);
-  display: none;
 
   //desktop styles
   @include respond-above(md) {
@@ -45,10 +44,6 @@
     border-radius: 5px;
     text-align: left;
     @include line-height(22);
-
-    &.hidden {
-      opacity: 0;
-    }
 
     @include respond-above(md) {
       @include line-height(38);

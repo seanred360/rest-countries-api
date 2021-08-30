@@ -1,5 +1,5 @@
 import React from "react";
-import CountryBox from "./countryBox";
+import CountryBox from "./CountryBox";
 
 const GridSquares = ({ paginatedItems }) => {
   return (

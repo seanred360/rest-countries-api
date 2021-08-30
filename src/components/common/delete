@@ -1,0 +1,30 @@
+const calculatePagesToRender = () => {
+    const totalPages = Math.ceil(itemsCount / pageSize);
+    // if we only have 1 page do not create page number buttons
+    if (totalPages === 1) return null;
+
+    let startPage, endPage;
+    if (totalPages <= 4) {
+      // less than 4 total pages so show all
+      startPage = 1;
+      endPage = totalPages;
+    } else {
+      // more than 4 total pages so calculate start and end pages
+      if (currentPage <= 3) {
+        startPage = 1;
+        endPage = 4;
+      } else if (currentPage + 1 >= totalPages) {
+        startPage = totalPages - 3;
+        endPage = totalPages;
+      } else {
+        startPage = currentPage - 2;
+        endPage = currentPage + 1;
+      }
+    }
+
+    // create an array of pages to ng-repeat in the pager control
+    const pages = [...Array(endPage + 1 - startPage).keys()].map(
+      (i) => startPage + i
+    );
+    return pages;
+  };

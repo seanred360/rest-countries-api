@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import RestCountriesApp from "./components/restCountriesApp";
+import RestCountriesApp from "./components/RestCountriesApp";
 import reportWebVitals from "./reportWebVitals";
 //import "bootstrap/dist/css/bootstrap.css";
 import "./dist/css/style.css"; // must come after bootstrap to override the styles
