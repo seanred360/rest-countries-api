@@ -15,6 +15,7 @@ class ExpandingSearchBar extends Component {
 
   handleOnChange = (event) => {
     this.setState({ searchInput: event.target.value });
+    this.props.handleSortCategorySelect("name", event.target.value);
   };
 
   render() {
@@ -24,8 +25,11 @@ class ExpandingSearchBar extends Component {
           type="search"
           className="input"
           placeholder="Search for a country..."
+          // onChange={(e) => {
+          //   this.setState({ searchInput: e.target.value });
+          // }}
           onChange={(e) => {
-            this.setState({ searchInput: e.target.value });
+            this.handleOnChange(e);
           }}
           onKeyPress={(event) => event.key === "Enter" && this.handleKeyPress()}
         ></input>

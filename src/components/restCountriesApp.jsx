@@ -3,6 +3,7 @@ import axios from "axios";
 import _ from "lodash";
 import { paginate } from "../utils/paginate";
 import { sort } from "../utils/sort";
+import { toTitleCase } from "../utils/toTitleCase";
 import NavBar from "./common/NavBar";
 import ExpandingSearchBar from "./common/ExpandingSearchBar";
 import DropDownBox from "./common/DropDownBox";
@@ -48,7 +49,7 @@ class RestCountriesApp extends Component {
   handleSortCategorySelect = (sortCategory, sortValue) => {
     this.setState({
       sortCategory: sortCategory.toLowerCase(),
-      sortValue: _.capitalize(sortValue),
+      sortValue: toTitleCase(sortValue),
       currentPage: 1,
     });
   };
