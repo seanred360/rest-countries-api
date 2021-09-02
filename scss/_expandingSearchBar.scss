@@ -22,6 +22,7 @@
       width: 100%;
       padding: 14px;
       padding-left: 74px;
+      border: none;
 
       //desktop
       @include respond-above(lg) {
@@ -42,8 +43,7 @@
   }
 
   .input {
-    background-color: white;
-    border: 0;
+    border: none;
     font-size: 18px;
     padding: 15px;
     height: 56px;
@@ -56,7 +56,6 @@
   }
 
   .search-btn {
-    background-color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;

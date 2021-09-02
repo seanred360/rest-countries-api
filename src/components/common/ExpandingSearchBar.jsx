@@ -23,11 +23,8 @@ class ExpandingSearchBar extends Component {
       <div className={"search " + this.state.active}>
         <input
           type="search"
-          className="input"
+          className="input foreground-color"
           placeholder="Search for a country..."
-          // onChange={(e) => {
-          //   this.setState({ searchInput: e.target.value });
-          // }}
           onChange={(e) => {
             this.handleOnChange(e);
           }}

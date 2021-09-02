@@ -73,7 +73,6 @@ body ul {
 }
 
 .navbar {
-  background: white;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
   margin-bottom: 48px;
   padding: 16px 30px;
@@ -99,14 +98,16 @@ body ul {
   }
 }
 
-.navbar .dark-mode {
+.navbar .theme-toggler {
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 600;
+  border: none;
+  background: none;
 }
 
 @media (min-width: 992px) {
-  .navbar .dark-mode {
+  .navbar .theme-toggler {
     font-size: 1rem;
     line-height: 1.375rem;
     font-weight: 600;
@@ -211,6 +212,7 @@ body ul {
   width: 100%;
   padding: 14px;
   padding-left: 74px;
+  border: none;
 }
 
 @media (min-width: 992px) {
@@ -226,8 +228,7 @@ body ul {
 }
 
 .search .input {
-  background-color: white;
-  border: 0;
+  border: none;
   font-size: 18px;
   padding: 15px;
   height: 56px;
@@ -239,7 +240,6 @@ body ul {
 }
 
 .search .search-btn {
-  background-color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -273,7 +273,6 @@ body ul {
   padding-left: 24px;
   outline: none;
   border: none;
-  background: white;
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
   border-radius: 5px;
   text-align: left;
@@ -297,7 +296,6 @@ body ul {
   margin-top: 4px;
   padding: 1rem;
   padding-left: 24px;
-  background: white;
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
   border-radius: 5px;
   text-align: left;
@@ -312,16 +310,11 @@ body ul {
 
 .dropdown .dropdown-menu .dropdown-item {
   width: 100%;
+  height: 38px;
   padding: 0;
   margin: 0;
   border: none;
-  background: none;
-  color: #070724;
   text-align: left;
-}
-
-.dropdown .dropdown-menu .dropdown-item:hover {
-  background: rgba(0, 26, 255, 0.575);
 }
 
 .grid-squares {

@@ -1,5 +1,4 @@
 .navbar {
-  background: $white;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
   margin-bottom: 48px;
 
@@ -25,11 +24,13 @@
     }
   }
 
-  .dark-mode {
+  .theme-toggler {
     //mobile
     @include font-size(12);
     @include line-height(16);
     font-weight: 600;
+    border: none;
+    background: none;
 
     //desktop
     @include respond-above(lg) {

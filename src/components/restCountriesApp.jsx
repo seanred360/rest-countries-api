@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import _ from "lodash";
 import { paginate } from "../utils/paginate";
 import { sort } from "../utils/sort";
 import { toTitleCase } from "../utils/toTitleCase";
-import NavBar from "./common/NavBar";
 import ExpandingSearchBar from "./common/ExpandingSearchBar";
 import DropDownBox from "./common/DropDownBox";
 import GridSquares from "./GridSquares";
@@ -86,7 +84,6 @@ class RestCountriesApp extends Component {
 
     return (
       <main>
-        <NavBar />
         <div className="container">
           <div className="search-and-dropdown-row">
             <ExpandingSearchBar

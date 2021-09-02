@@ -1,14 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import RestCountriesApp from "./components/RestCountriesApp";
 import reportWebVitals from "./reportWebVitals";
-//import "bootstrap/dist/css/bootstrap.css";
+import App from "./App";
 import "./dist/css/style.css"; // must come after bootstrap to override the styles
-//import "font-awesome/css/font-awesome.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <RestCountriesApp />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
