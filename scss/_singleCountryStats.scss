@@ -1,0 +1,114 @@
+.single-country-page {
+  margin: 0px 28px;
+
+  .back-button {
+    margin-bottom: 24px;
+    padding: 6px 24px;
+    border: none;
+    text-align: left;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.293139);
+    border-radius: 2px;
+  }
+
+  .page-container {
+    @include respond-above(lg) {
+      display: grid;
+      grid-template-columns: auto auto;
+      justify-content: center;
+      align-items: center;
+      grid-gap: 5vw;
+    }
+
+    @include respond-above(xl) {
+      grid-gap: 10vw;
+    }
+
+    .country-flag {
+      margin: 44px 0;
+      border-radius: 5px;
+    }
+
+    .country-stats-groups {
+      & * {
+        margin-bottom: 32px;
+      }
+
+      .country-name {
+        margin: 0;
+        margin-bottom: 16px;
+      }
+
+      p {
+        @include line-height(32);
+        margin: 0;
+      }
+
+      @include respond-above(sm) {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+          "top top"
+          "topLeft  topRight"
+          "bottom  bottom";
+
+        & * {
+          margin-bottom: 0px;
+        }
+
+        .grid-area-1 {
+          grid-area: top;
+        }
+        .grid-area-2 {
+          grid-area: topLeft;
+        }
+        .grid-area-3 {
+          grid-area: topRight;
+          margin-bottom: auto;
+        }
+        .grid-area-4 {
+          grid-area: bottom;
+          margin-top: 68px;
+
+          @include respond-above(sm) {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+          }
+
+          .border-countries-label {
+            @include font-size(16);
+            @include line-height(24);
+            margin-bottom: 16px;
+
+            @include respond-above(sm) {
+              margin-bottom: 0;
+              margin-right: 1rem;
+            }
+          }
+
+          .border-countries-btns {
+            display: flex;
+            justify-content: center;
+
+            .border-country-btn {
+              min-width: 96px;
+              min-height: 26px;
+              border: none;
+              box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.104931);
+              border-radius: 2px;
+              color: white;
+              @include line-height(16);
+              font-weight: 300;
+
+              &:not(:last-child) {
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

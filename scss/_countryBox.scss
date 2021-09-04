@@ -23,18 +23,7 @@
       margin-bottom: 1rem;
     }
 
-    .font-600 {
-      font-weight: 600;
-    }
-
-    .font-300 {
-      font-weight: 300;
-    }
-
     p {
-      @include font-size(14);
-      @include line-height(16);
-      font-weight: 300;
       margin: 0;
       margin-bottom: 8px;
     }

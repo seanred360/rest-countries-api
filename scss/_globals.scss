@@ -34,6 +34,19 @@ body {
   }
 }
 
+p {
+  @include font-size(14);
+  font-weight: 600;
+
+  @include respond-above(md) {
+    @include font-size(16);
+  }
+
+  span {
+    font-weight: 300;
+  }
+}
+
 .container {
   margin: 0px 16px;
   max-width: 1200px;

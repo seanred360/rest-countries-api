@@ -1,10 +1,10 @@
 import React from "react";
-import RestCountriesApp from "./components/RestCountriesApp";
 import { useDarkMode } from "./components/styled-components/useDarkMode";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./components/styled-components/GlobalStyles";
 import { lightTheme, darkTheme } from "./components/styled-components/Themes";
 import ThemeToggler from "./components/styled-components/ThemeToggler";
+import Main from "./components/Main";
 
 const App = () => {
   const [theme, themeToggler, mountedComponent] = useDarkMode();
@@ -19,9 +19,8 @@ const App = () => {
           <span className="title">Where in the world?</span>
           <ThemeToggler theme={theme} toggleTheme={themeToggler} />
         </nav>
-        {/* <Toggle theme={theme} toggleTheme={themeToggler} /> */}
         <div className="App">
-          <RestCountriesApp />
+          <Main />
         </div>
       </>
     </ThemeProvider>

@@ -53,4 +53,9 @@ export const GlobalStyles = createGlobalStyle`
       }
     }
   }
+
+  .back-button {
+    background: ${({ theme }) => theme.foregroundColor};
+    color: ${({ theme }) => theme.text};
+  }
   `;

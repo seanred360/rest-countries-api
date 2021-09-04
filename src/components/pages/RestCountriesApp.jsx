@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { paginate } from "../utils/paginate";
-import { sort } from "../utils/sort";
-import { toTitleCase } from "../utils/toTitleCase";
-import ExpandingSearchBar from "./common/ExpandingSearchBar";
-import DropDownBox from "./common/DropDownBox";
-import GridSquares from "./GridSquares";
-import Pagination from "./common/Pagination";
+import { paginate } from "../../utils/paginate";
+import { sort } from "../../utils/sort";
+import { toTitleCase } from "../../utils/toTitleCase";
+import ExpandingSearchBar from "../common/ExpandingSearchBar";
+import DropDownBox from "../common/DropDownBox";
+import GridSquares from "../GridSquares";
+import Pagination from "../common/Pagination";
 
 class RestCountriesApp extends Component {
   state = {
