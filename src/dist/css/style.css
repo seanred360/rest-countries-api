@@ -471,6 +471,7 @@ p span {
 .single-country-page .page-container .country-flag {
   margin: 44px 0;
   border-radius: 5px;
+  max-width: 560px;
 }
 
 .single-country-page .page-container .country-stats-groups * {

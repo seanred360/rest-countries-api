@@ -58,4 +58,11 @@ export const GlobalStyles = createGlobalStyle`
     background: ${({ theme }) => theme.foregroundColor};
     color: ${({ theme }) => theme.text};
   }
+
+  Link {
+    text-decoration: none;
+
+    &:focus, &:hover, &:visited, &:link, &:active {
+        text-decoration: none;
+  }
   `;

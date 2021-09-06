@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import { paginate } from "../../utils/paginate";
 import { sort } from "../../utils/sort";
 import { toTitleCase } from "../../utils/toTitleCase";
@@ -10,29 +9,12 @@ import Pagination from "../common/Pagination";
 
 class RestCountriesApp extends Component {
   state = {
-    error: null,
-    isLoaded: false,
-    countries: [],
     regions: ["Africa", "Americas", "Asia", "Europe", "Oceania"],
     currentPage: 1,
     pageSize: 8,
     sortCategory: "",
     sortValue: "",
   };
-
-  componentDidMount() {
-    axios
-      .get("https://restcountries.eu/rest/v2/all")
-      .then((response) => {
-        this.setState({ isLoaded: true, countries: response.data });
-      })
-      .catch((error) => {
-        this.setState({
-          isLoaded: true,
-          error,
-        });
-      });
-  }
 
   handlePageChange = (page) => {
     const { currentPage } = this.state;
@@ -53,13 +35,8 @@ class RestCountriesApp extends Component {
   };
 
   getPagedData = () => {
-    const {
-      pageSize,
-      currentPage,
-      sortCategory,
-      sortValue,
-      countries: allCountries,
-    } = this.state;
+    const { pageSize, currentPage, sortCategory, sortValue } = this.state;
+    const { countries: allCountries } = this.props;
 
     // grab the countries from the array that match the sort parameters
     // then order the filtered array of countries based on the category. Example: order the filtered countries by their name or region
@@ -98,7 +75,7 @@ class RestCountriesApp extends Component {
           </div>
 
           {/* this has a different level of abstraction it should be raised to a higher component */}
-          <GridSquares paginatedItems={countries} />
+          <GridSquares paginatedItems={countries} onSelectCountry={this.props.onSelectCountry} />
 
           <Pagination
             itemsCount={totalCount}

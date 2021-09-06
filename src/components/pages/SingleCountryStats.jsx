@@ -1,72 +1,90 @@
-import React from "react";
+import React, { Component } from "react";
 import BackButton from "../common/BackButton";
-import ScaleText from "react-scale-text";
+//import ScaleText from "react-scale-text";
 
-const SingleCountryStats = () => {
-  return (
-    <div className="single-country-page">
-      <BackButton />
+class SingleCountryStats extends Component {
+  getCurrencies = (selectedCountry) => {
+    let result = "";
+    for (let currency of selectedCountry.currencies) {
+      result += currency.name + ", ";
+    }
+    return result;
+  };
 
-      <div className="page-container">
-        <img
-          className="country-flag"
-          src="https://restcountries.eu/data/bel.svg"
-          alt="Flag of the country"
-        />
+  getLanguages = (selectedCountry) => {
+    let result = "";
+    for (let language of selectedCountry.languages) {
+      result += language.name + ", ";
+    }
+    return result;
+  };
 
-        <div className="country-stats-groups">
-          <h2 className="grid-arena-1 country-name">Country name</h2>
-          <div className="grid-area-2">
-            <p>
-              Native Name: <span>native name value</span>
-            </p>
-            <p>
-              Population: <span>1,102,302,300</span>
-            </p>
-            <p>
-              Region: <span>Region name</span>
-            </p>
-            <p>
-              Sub Region: <span>Sub Region name</span>
-            </p>
-            <p>
-              Capital: <span>capital name</span>
-            </p>
-          </div>
+  render() {
+    const { selectedCountry } = this.props;
 
-          <div className="grid-area-3">
-            <p>
-              Top Level Domain: <span>domain name name</span>
-            </p>
-            <p>
-              Currencies: <span>currency name</span>
-            </p>
-            <p>
-              Languages: <span>language names</span>
-            </p>
-          </div>
+    return (
+      <div className="single-country-page">
+        <BackButton />
 
-          <div className="grid-area-4">
-            <p className="border-countries-label">Border Countries: </p>
-            <div className="border-countries-btns">
-              <button className="border-country-btn foreground-color">
-                usaaaaaa
-                {/* <ScaleText>the united states of america</ScaleText> */}
-              </button>
-              <button className="border-country-btn foreground-color">
-                usaaaaa
-                {/* <ScaleText>the united states of america</ScaleText> */}
-              </button>
-              <button className="border-country-btn foreground-color">
-                usdasdas
-                {/* <ScaleText>Germany</ScaleText> */}
-              </button>
+        <div className="page-container">
+          <img
+            className="country-flag"
+            src={selectedCountry.flag}
+            alt="Flag of the country"
+          />
+
+          <div className="country-stats-groups">
+            <h2 className="grid-arena-1 country-name">
+              {selectedCountry.name}
+            </h2>
+            <div className="grid-area-2">
+              <p>
+                Native Name: <span>{selectedCountry.nativeName}</span>
+              </p>
+              <p>
+                Population: <span>{selectedCountry.population}</span>
+              </p>
+              <p>
+                Region: <span>{selectedCountry.region}</span>
+              </p>
+              <p>
+                Sub Region: <span>{selectedCountry.subregion}</span>
+              </p>
+              <p>
+                Capital: <span>{selectedCountry.capital}</span>
+              </p>
+            </div>
+
+            <div className="grid-area-3">
+              <p>
+                Top Level Domain: <span>{selectedCountry.topLevelDomain}</span>
+              </p>
+              <p>
+                Currencies: <span>{this.getCurrencies(selectedCountry)}</span>
+              </p>
+              <p>
+                Languages: <span>{this.getLanguages(selectedCountry)}</span>
+              </p>
+            </div>
+
+            <div className="grid-area-4">
+              <p className="border-countries-label">Border Countries: </p>
+              <div className="border-countries-btns">
+                {selectedCountry.borders.map((country) => (
+                  <button
+                    key={country}
+                    className="border-country-btn foreground-color"
+                  >
+                    {country}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default SingleCountryStats;
