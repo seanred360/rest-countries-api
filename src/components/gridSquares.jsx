@@ -3,13 +3,6 @@ import CountryBox from "./CountryBox";
 import { Link } from "react-router-dom";
 
 class GridSquares extends Component {
-  state = {};
-
-  // raise which country was clicked to the Main component
-  handleOnClick = (selectedCountry) => {
-    this.props.onSelectCountry(selectedCountry);
-  };
-
   render() {
     const { paginatedItems } = this.props;
 
@@ -19,8 +12,7 @@ class GridSquares extends Component {
           <Link
             key={item.name + "link"}
             style={{ color: "inherit" }}
-            to="/single"
-            onClick={() => this.handleOnClick(item)}
+            to={`/${item.name}`}
           >
             <CountryBox
               key={item.name}
