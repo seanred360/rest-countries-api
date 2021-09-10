@@ -12,7 +12,7 @@ class GridSquares extends Component {
           <Link
             key={item.name + "link"}
             style={{ color: "inherit" }}
-            to={`/${item.name}`}
+            to={`/${item.alpha2Code}`}
           >
             <CountryBox
               key={item.name}
