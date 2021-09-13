@@ -34,14 +34,15 @@ class HomePage extends Component {
       });
   }
 
-  handlePageChange = (page) => {
+  handlePageChange = (pageNumber, totalPages) => {
     const { currentPage } = this.state;
 
-    if (page !== "prev" && page !== "next")
-      this.setState({ currentPage: page });
-    else if (page === "prev" && currentPage > 1)
+    if (pageNumber !== "prev" && pageNumber !== "next")
+      this.setState({ currentPage: pageNumber });
+    else if (pageNumber === "prev" && currentPage > 1)
       this.setState({ currentPage: currentPage - 1 });
-    else if (page === "next") this.setState({ currentPage: currentPage + 1 });
+    else if (pageNumber === "next" && currentPage < totalPages)
+      this.setState({ currentPage: currentPage + 1 });
   };
 
   handleSortCategorySelect = (sortCategory, sortValue) => {
@@ -67,7 +68,7 @@ class HomePage extends Component {
 
     // return a single page of countries sliced from the total collection of countries
     const countries = paginate(
-      sorted.sorted,
+      sorted,
       currentPage,
       pageSize,
       currentPage

@@ -10,25 +10,12 @@ export const GlobalStyles = createGlobalStyle`
 
   .foreground-color {
     background: ${({ theme }) => theme.foregroundColor};
-  }
-
-  .theme-toggler {
     color: ${({ theme }) => theme.text};
   }
 
   .dropdown {
-    .dropdown-toggle {
-      background: ${({ theme }) => theme.foregroundColor};
-      color: ${({ theme }) => theme.text};
-    }
-
     .dropdown-menu {
-      background: ${({ theme }) => theme.foregroundColor};
-
       .dropdown-item {
-        background: ${({ theme }) => theme.foregroundColor};
-        color: ${({ theme }) => theme.text};
-
         &:hover {
           background: ${({ theme }) => theme.backgroundColor};
         }
@@ -54,15 +41,30 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
-  .back-button {
-    background: ${({ theme }) => theme.foregroundColor};
-    color: ${({ theme }) => theme.text};
+  a.border-country-btn {
+    display: inline-block;
+    text-align: center;
+    min-width: 96px;
+    min-height: 26px;
+    border: none;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.104931);
+    border-radius: 2px;
+    @include line-height(16);
+    font-weight: 300;
+    margin-bottom: 10px;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
   }
 
-  Link {
-    text-decoration: none;
-
-    &:focus, &:hover, &:visited, &:link, &:active {
-        text-decoration: none;
+  .pagination-btns-container {
+    .btn {
+      &.active {
+        background: ${({ theme }) => theme.paginationBtnActive};
+        color: ${({ theme }) => theme.paginationActiveText};
+      }
+    }
   }
+}
   `;

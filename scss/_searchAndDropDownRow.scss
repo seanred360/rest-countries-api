@@ -1,6 +1,7 @@
 .search-and-dropdown-row {
   //mobile styles
   display: block;
+  width: 100%;
 
   //desktop styles
   @include respond-above(lg) {

@@ -17,7 +17,6 @@ body {
   background: #f2f2f2;
   background-repeat: no-repeat;
   font-style: normal;
-  font-weight: normal;
   font-size: 16px;
   line-height: 1.5625rem;
   padding: 0;
@@ -38,10 +37,6 @@ p {
   @include font-size(14);
   font-weight: 600;
 
-  @include respond-above(md) {
-    @include font-size(16);
-  }
-
   span {
     font-weight: 300;
   }
@@ -49,7 +44,7 @@ p {
 
 .container {
   margin: 0px 16px;
-  max-width: 1200px;
+  max-width: 1400px;
 
   @include respond-above(lg) {
     margin: auto;
@@ -80,8 +75,29 @@ p {
   }
 }
 
+Link {
+  text-decoration: none;
+
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+  }
+}
+
 .hide-for-desktop {
   @include respond-above(sm) {
     display: none;
   }
+}
+
+.screen-reader-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }

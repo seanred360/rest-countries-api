@@ -23,42 +23,52 @@ const Pagination = ({ itemsCount, pageSize, currentPage, onPageChange }) => {
       // more than 6 total pages so calculate start and end pages
       if (currentPage <= 3) {
         startPage = 1;
-        endPage = 6;
+        endPage = 5;
       } else if (currentPage + 1 >= totalPages) {
-        startPage = totalPages - 3;
+        startPage = totalPages - 4;
         endPage = totalPages;
       } else {
-        startPage = currentPage - 3;
+        startPage = currentPage - 2;
         endPage = currentPage + 2;
       }
     }
 
-    // create an array of pages to ng-repeat in the pager control
-    const pages = [...Array(endPage + 1 - startPage).keys()].map(
+    const pageNumbers = [...Array(endPage + 1 - startPage).keys()].map(
       (i) => startPage + i
     );
-    return pages;
+    return { pageNumbers, totalPages };
   };
 
   // these are just buttons with numbers that tell the parent element which page to go to
   // they know nothing about what the pages have on them
-  const pages = calculatePagesToRender();
+  const pageData = calculatePagesToRender();
 
+  if (pageData === null) return null;
   return (
-    <nav className="btns-container">
-      <button className="btn prev" onClick={() => onPageChange("prev")}>
+    <nav className="pagination-btns-container">
+      <button
+        className="btn prev foreground-color"
+        onClick={() => onPageChange("prev", pageData.totalPages)}
+      >
         <GoChevronLeft />
       </button>
-      {pages.map((page) => (
+      {pageData.pageNumbers.map((pageNumber) => (
         <button
-          key={page}
-          className={page === currentPage ? "btn active" : "btn"}
-          onClick={() => onPageChange(page)}
+          key={pageNumber}
+          className={
+            pageNumber === currentPage
+              ? "btn foreground-color active"
+              : "btn foreground-color"
+          }
+          onClick={() => onPageChange(pageNumber, pageData.totalPages)}
         >
-          {page}
+          {pageNumber}
         </button>
       ))}
-      <button className="btn next" onClick={() => onPageChange("next")}>
+      <button
+        className="btn next foreground-color"
+        onClick={() => onPageChange("next", pageData.totalPages)}
+      >
         <GoChevronRight />
       </button>
     </nav>

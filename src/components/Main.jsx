@@ -9,7 +9,10 @@ const Main = () => {
     <Switch>
       {/* The Switch decides which component to show based on the current URL.*/}
       <Route exact path="/not-found" component={NotFound}></Route>
-      <Route path="/:id" component={SingleCountryPage}></Route>
+      <Route
+        path="/:id"
+        render={(props) => <SingleCountryPage {...props} />}
+      ></Route>
       <Route exact path="/" component={HomePage}></Route>
     </Switch>
   );

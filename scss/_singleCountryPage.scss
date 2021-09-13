@@ -1,5 +1,11 @@
 .single-country-page {
   margin: 0px 28px;
+  max-width: 1440px;
+
+  @include respond-above(xxl) {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .back-button {
     margin-bottom: 24px;
@@ -11,10 +17,9 @@
   }
 
   .page-container {
-    @include respond-above(lg) {
+    @include respond-above(xl) {
       display: grid;
       grid-template-columns: auto auto;
-      justify-content: center;
       align-items: center;
       grid-gap: 5vw;
     }
@@ -26,22 +31,29 @@
     .country-flag {
       margin: 44px 0;
       border-radius: 5px;
+      width: 100%;
       max-width: 560px;
     }
 
     .country-stats-groups {
-      & * {
-        margin-bottom: 32px;
-      }
-
       .country-name {
         margin: 0;
+        margin-top: 44px;
         margin-bottom: 16px;
       }
 
       p {
         @include line-height(32);
         margin: 0;
+      }
+
+      @include respond-below(sm) {
+        .grid-area-1,
+        .grid-area-2,
+        .grid-area-3,
+        .grid-area-4 {
+          margin-bottom: 32px;
+        }
       }
 
       @include respond-above(sm) {
@@ -54,15 +66,12 @@
           "topLeft  topRight"
           "bottom  bottom";
 
-        & * {
-          margin-bottom: 0px;
-        }
-
         .grid-area-1 {
           grid-area: top;
         }
         .grid-area-2 {
           grid-area: topLeft;
+          margin-bottom: 34px;
         }
         .grid-area-3 {
           grid-area: topRight;
@@ -70,44 +79,34 @@
         }
         .grid-area-4 {
           grid-area: bottom;
-          margin-top: 68px;
-
-          @include respond-above(sm) {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-          }
+          //margin-bottom: 60px;
 
           .border-countries-label {
             @include font-size(16);
             @include line-height(24);
-            margin-bottom: 16px;
-
-            @include respond-above(sm) {
-              margin-bottom: 0;
-              margin-right: 1rem;
-            }
+            margin-bottom: 1rem;
+            margin-right: 1rem;
           }
 
-          .border-countries-btns {
-            display: flex;
-            justify-content: center;
+          //handled in GlobalStyles.jsx because it overrides these
 
-            .border-country-btn {
-              min-width: 96px;
-              min-height: 26px;
-              border: none;
-              box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.104931);
-              border-radius: 2px;
-              color: white;
-              @include line-height(16);
-              font-weight: 300;
+          // .border-countries-btns {
+          //   a.border-country-btn {
+          //     display: inline-block;
+          //     text-align: center;
+          //     min-width: 96px;
+          //     min-height: 26px;
+          //     border: none;
+          //     box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.104931);
+          //     border-radius: 2px;
+          //     @include line-height(16);
+          //     font-weight: 300;
 
-              &:not(:last-child) {
-                margin-right: 10px;
-              }
-            }
-          }
+          //     &:not(:last-child) {
+          //       margin-right: 10px;
+          //     }
+          //   }
+          // }
         }
       }
     }

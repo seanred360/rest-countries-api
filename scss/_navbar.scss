@@ -11,6 +11,10 @@
     padding: 24px 80px;
   }
 
+  @include respond-above(xxxl) {
+    justify-content: space-evenly;
+  }
+
   .title {
     //mobile
     @include font-size(14);

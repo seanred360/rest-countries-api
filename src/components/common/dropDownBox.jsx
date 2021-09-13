@@ -19,7 +19,7 @@ class DropDownBox extends Component {
     return (
       <div className="dropdown">
         <button
-          className="dropdown-toggle flex flex-ai-c flex-jc-sb"
+          className="dropdown-toggle foreground-color flex flex-ai-c flex-jc-sb"
           onClick={() => {
             this.setState({ isOpen: !this.state.isOpen });
           }}
@@ -28,13 +28,13 @@ class DropDownBox extends Component {
           <FiChevronDown className="chevron-icon" />
         </button>
         <ul
-          className="dropdown-menu"
+          className="dropdown-menu foreground-color"
           style={{ display: this.state.isOpen ? "block" : "none" }}
         >
           {dropdownItems.map((item) => (
             <li key={item}>
               <button
-                className="dropdown-item"
+                className="dropdown-item foreground-color"
                 onClick={() => this.handleOnClick(sortCategory, item)}
               >
                 {item}

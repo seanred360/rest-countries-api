@@ -17,7 +17,6 @@ body {
   background: #f2f2f2;
   background-repeat: no-repeat;
   font-style: normal;
-  font-weight: normal;
   font-size: 16px;
   line-height: 1.5625rem;
   padding: 0;
@@ -38,19 +37,13 @@ p {
   font-weight: 600;
 }
 
-@media (min-width: 768px) {
-  p {
-    font-size: 1rem;
-  }
-}
-
 p span {
   font-weight: 300;
 }
 
 .container {
   margin: 0px 16px;
-  max-width: 1200px;
+  max-width: 1400px;
 }
 
 @media (min-width: 992px) {
@@ -81,10 +74,27 @@ p span {
   }
 }
 
+Link {
+  text-decoration: none;
+}
+
+Link:focus, Link:hover, Link:visited, Link:link, Link:active {
+  text-decoration: none;
+}
+
 @media (min-width: 576px) {
   .hide-for-desktop {
     display: none;
   }
+}
+
+.screen-reader-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 .navbar {
@@ -97,6 +107,12 @@ p span {
 @media (min-width: 992px) {
   .navbar {
     padding: 24px 80px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .navbar {
+    justify-content: space-evenly;
   }
 }
 
@@ -144,6 +160,7 @@ p span {
 
 .search-and-dropdown-row {
   display: block;
+  width: 100%;
 }
 
 @media (min-width: 992px) {
@@ -361,16 +378,16 @@ p span {
 @media (min-width: 1400px) {
   .grid-squares {
     grid-template-columns: auto auto auto auto;
-    grid-column-gap: auto;
-    grid-row-gap: auto;
+    grid-column-gap: 48px;
+    grid-row-gap: 48px;
   }
 }
 
 .country-box {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
+  display: block;
+  grid-template-rows: 1fr auto;
   max-width: 264px;
-  max-height: 336px;
+  min-width: 0;
   background: white;
   box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.0294384);
   border-radius: 5px;
@@ -383,6 +400,8 @@ p span {
 
 .country-box .country-stats {
   margin-left: 24px;
+  margin-right: 24px;
+  padding-bottom: 46px;
 }
 
 .country-box .country-stats .country-name {
@@ -391,6 +410,9 @@ p span {
   font-weight: 800;
   margin-top: 24px;
   margin-bottom: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .country-box .country-stats p {
@@ -398,49 +420,55 @@ p span {
   margin-bottom: 8px;
 }
 
-.btns-container {
+.pagination-btns-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   margin-bottom: 5vh;
+  height: 4rem;
 }
 
 @media (min-width: 576px) {
-  .btns-container {
-    justify-content: space-between;
+  .pagination-btns-container {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 .btn {
-  background-color: white;
-  border-radius: 5px;
-  font-size: 1.7rem;
+  border-radius: 100%;
+  font-size: 0.9rem;
   width: 3rem;
   height: 3rem;
   cursor: pointer;
-}
-
-@media (min-width: 576px) {
-  .btn {
-    width: 4rem;
-    height: 4rem;
-  }
+  transition: all 0.3s ease;
 }
 
 .btn.next,
 .btn.prev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: none;
   font-size: 2.8rem;
   border: none;
 }
 
 .active {
-  background: #070724;
-  color: white;
+  width: 4rem;
+  height: 4rem;
 }
 
 .single-country-page {
   margin: 0px 28px;
+  max-width: 1440px;
+}
+
+@media (min-width: 1400px) {
+  .single-country-page {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .single-country-page .back-button {
@@ -452,11 +480,10 @@ p span {
   border-radius: 2px;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .single-country-page .page-container {
     display: grid;
     grid-template-columns: auto auto;
-    justify-content: center;
     align-items: center;
     grid-gap: 5vw;
   }
@@ -471,21 +498,28 @@ p span {
 .single-country-page .page-container .country-flag {
   margin: 44px 0;
   border-radius: 5px;
+  width: 100%;
   max-width: 560px;
-}
-
-.single-country-page .page-container .country-stats-groups * {
-  margin-bottom: 32px;
 }
 
 .single-country-page .page-container .country-stats-groups .country-name {
   margin: 0;
+  margin-top: 44px;
   margin-bottom: 16px;
 }
 
 .single-country-page .page-container .country-stats-groups p {
   line-height: 2rem;
   margin: 0;
+}
+
+@media (max-width: 575px) {
+  .single-country-page .page-container .country-stats-groups .grid-area-1,
+  .single-country-page .page-container .country-stats-groups .grid-area-2,
+  .single-country-page .page-container .country-stats-groups .grid-area-3,
+  .single-country-page .page-container .country-stats-groups .grid-area-4 {
+    margin-bottom: 32px;
+  }
 }
 
 @media (min-width: 576px) {
@@ -496,14 +530,12 @@ p span {
     grid-template-rows: auto auto;
     grid-template-areas: "top top" "topLeft  topRight" "bottom  bottom";
   }
-  .single-country-page .page-container .country-stats-groups * {
-    margin-bottom: 0px;
-  }
   .single-country-page .page-container .country-stats-groups .grid-area-1 {
     grid-area: top;
   }
   .single-country-page .page-container .country-stats-groups .grid-area-2 {
     grid-area: topLeft;
+    margin-bottom: 34px;
   }
   .single-country-page .page-container .country-stats-groups .grid-area-3 {
     grid-area: topRight;
@@ -511,50 +543,12 @@ p span {
   }
   .single-country-page .page-container .country-stats-groups .grid-area-4 {
     grid-area: bottom;
-    margin-top: 68px;
   }
-}
-
-@media (min-width: 576px) and (min-width: 576px) {
-  .single-country-page .page-container .country-stats-groups .grid-area-4 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-}
-
-@media (min-width: 576px) {
   .single-country-page .page-container .country-stats-groups .grid-area-4 .border-countries-label {
     font-size: 1rem;
     line-height: 1.5rem;
-    margin-bottom: 16px;
-  }
-}
-
-@media (min-width: 576px) and (min-width: 576px) {
-  .single-country-page .page-container .country-stats-groups .grid-area-4 .border-countries-label {
-    margin-bottom: 0;
+    margin-bottom: 1rem;
     margin-right: 1rem;
-  }
-}
-
-@media (min-width: 576px) {
-  .single-country-page .page-container .country-stats-groups .grid-area-4 .border-countries-btns {
-    display: flex;
-    justify-content: center;
-  }
-  .single-country-page .page-container .country-stats-groups .grid-area-4 .border-countries-btns .border-country-btn {
-    min-width: 96px;
-    min-height: 26px;
-    border: none;
-    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.104931);
-    border-radius: 2px;
-    color: white;
-    line-height: 1rem;
-    font-weight: 300;
-  }
-  .single-country-page .page-container .country-stats-groups .grid-area-4 .border-countries-btns .border-country-btn:not(:last-child) {
-    margin-right: 10px;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -22,7 +22,7 @@
 
   @include respond-above(xxl) {
     grid-template-columns: auto auto auto auto;
-    grid-column-gap: auto;
-    grid-row-gap: auto;
+    grid-column-gap: 48px;
+    grid-row-gap: 48px;
   }
 }

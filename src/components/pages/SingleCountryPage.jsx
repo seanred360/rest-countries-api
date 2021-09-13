@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { useRouteMatch, useHistory, Link } from "react-router-dom";
 import axios from "axios";
 import BackButton from "../common/BackButton";
+import getLanguages from "../../utils/getLanguages";
+import getCurrencies from "../../utils/getCurrencies";
 
 const SingleCountryPage = () => {
   const [country, setCountry] = useState({});
@@ -48,7 +50,7 @@ const SingleCountryPage = () => {
               Native Name: <span>{country.nativeName}</span>
             </p>
             <p>
-              Population: <span>{country.population}</span>
+              Population: <span>{country.population.toLocaleString()}</span>
             </p>
             <p>
               Region: <span>{country.region}</span>
@@ -66,9 +68,11 @@ const SingleCountryPage = () => {
               Top Level Domain: <span>{country.topLevelDomain}</span>
             </p>
             <p>
-              {/* Currencies: <span>{this.getCurrencies(country)}</span> */}
+              Currencies: <span>{getCurrencies(country)}</span>
             </p>
-            <p>{/* Languages: <span>{this.getLanguages(country)}</span> */}</p>
+            <p>
+              Languages: <span>{getLanguages(country)}</span>
+            </p>
           </div>
 
           <div className="grid-area-4">
