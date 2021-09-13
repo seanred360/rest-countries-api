@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
 html {
   font-size: 100%;
   box-sizing: border-box;
@@ -550,5 +551,59 @@ Link:focus, Link:hover, Link:visited, Link:link, Link:active {
     margin-bottom: 1rem;
     margin-right: 1rem;
   }
+}
+
+.page_404 {
+  position: relative;
+  width: 100%;
+  font-family: "Arvo", serif;
+  text-align: center;
+}
+
+.page_404 .caveman-image {
+  background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+  height: 400px;
+  width: 100%;
+  margin: 20px 0px 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.page_404 .caveman-image .text-404 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  font-size: 5rem;
+  color: black;
+}
+
+.page_404 .content-box-404 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.page_404 .content-box-404 .looks-like-you-are-lost {
+  font-size: 1.875rem;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.page_404 .content-box-404 p {
+  font-size: 0.875rem;
+  font-weight: 300;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.page_404 .content-box-404 .back-button {
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px 30px;
+  border: none;
+  text-align: left;
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.293139);
+  border-radius: 2px;
 }
 /*# sourceMappingURL=style.css.map */
