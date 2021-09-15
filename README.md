@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Screenshot
 
-![./screenshot.jpg]
+![screenshot](./screenshot.jpg)
 
 ### Links
 
@@ -96,7 +96,7 @@ useEffect(() => {
 
 ##### Theme switcher
 
-![./theme-switcher.gif]
+![screenshot](./theme-switcher.gif)
 
 I used styled-components to switch between dark mode and light mode. It was a much cleaner and scaleable way to toggle between themes.
 
