@@ -8,14 +8,8 @@ const Main = () => {
   return (
     <Switch>
       {/* The Switch decides which component to show based on the current URL.*/}
+      <Route exact path="/not-found" component={NotFound}></Route>
       <Route
-        // basename="/public"
-        exact
-        path="/not-found"
-        component={NotFound}
-      ></Route>
-      <Route
-        // basename="/public"
         path="/:id"
         render={(props) => <SingleCountryPage {...props} />}
       ></Route>
