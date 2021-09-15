@@ -35,8 +35,9 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://rest-countries-app-seanred.herokuapp.com/]
-- Live Site URL: [https://github.com/seanred360/rest-countries-api]
+- Frontend Mentor Solution URL: [https://www.frontendmentor.io/solutions/react-and-styledcomponents-rest-countries-hCoIHvj7I]
+- GitHub URL: [https://github.com/seanred360/rest-countries-api]
+- Live Site URL: [https://rest-countries-app-seanred.herokuapp.com/]
 
 ## My process
 
