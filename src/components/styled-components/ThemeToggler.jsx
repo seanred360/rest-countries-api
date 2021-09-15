@@ -23,6 +23,7 @@ const ThemeToggler = ({ theme, toggleTheme }) => {
   return (
     <button
       onClick={toggleTheme}
+      aria-label="Toggle theme"
       className="theme-toggler foreground-color flex flex-jc-c flex-ai-c"
     >
       <IoMoonOutline className="io-moon-outline" />

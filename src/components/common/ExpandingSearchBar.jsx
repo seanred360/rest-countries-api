@@ -30,7 +30,7 @@ class ExpandingSearchBar extends Component {
           }}
           onKeyPress={(event) => event.key === "Enter" && this.handleKeyPress()}
         ></input>
-        <button className="search-btn">
+        <button className="search-btn" aria-label="Open Search">
           <BiSearchAlt2 className="search-icon" onClick={this.handleOnClick} />
         </button>
       </div>

@@ -11,7 +11,7 @@ const BackButton = () => {
   };
 
   return (
-    <button className="back-button foreground-color flex flex-ai-c" onClick={routeChange}>
+    <button className="back-button foreground-color flex flex-ai-c" aria-label="Go Back" onClick={routeChange}>
       <HiArrowNarrowLeft />
       Back
     </button>

@@ -45,9 +45,9 @@ const Pagination = ({ itemsCount, pageSize, currentPage, onPageChange }) => {
 
   if (pageData === null) return null;
   return (
-    <nav className="pagination-btns-container">
+    <div className="pagination-btns-container">
       <button
-        className="btn prev foreground-color"
+        className="btn prev foreground-color" aria-label="Previous page"
         onClick={() => onPageChange("prev", pageData.totalPages)}
       >
         <GoChevronLeft />
@@ -59,19 +59,19 @@ const Pagination = ({ itemsCount, pageSize, currentPage, onPageChange }) => {
             pageNumber === currentPage
               ? "btn foreground-color active"
               : "btn foreground-color"
-          }
+          } aria-label={"Page " + pageNumber}
           onClick={() => onPageChange(pageNumber, pageData.totalPages)}
         >
           {pageNumber}
         </button>
       ))}
       <button
-        className="btn next foreground-color"
+        className="btn next foreground-color" aria-label="Next page"
         onClick={() => onPageChange("next", pageData.totalPages)}
       >
         <GoChevronRight />
       </button>
-    </nav>
+    </div>
   );
 };
 

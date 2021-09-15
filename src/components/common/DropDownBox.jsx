@@ -19,7 +19,7 @@ class DropDownBox extends Component {
     return (
       <div className="dropdown">
         <button
-          className="dropdown-toggle foreground-color flex flex-ai-c flex-jc-sb"
+          className="dropdown-toggle foreground-color flex flex-ai-c flex-jc-sb" aria-label="Regions"
           onClick={() => {
             this.setState({ isOpen: !this.state.isOpen });
           }}
@@ -34,7 +34,7 @@ class DropDownBox extends Component {
           {dropdownItems.map((item) => (
             <li key={item}>
               <button
-                className="dropdown-item foreground-color"
+                className="dropdown-item foreground-color" aria-label={item}
                 onClick={() => this.handleOnClick(sortCategory, item)}
               >
                 {item}
