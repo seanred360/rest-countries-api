@@ -53,7 +53,7 @@ Users should be able to:
 
 ### What I learned
 
-This is my first time deploying an app with React. This is also my first multi page app.
+This is my first time deploying an app with React.
 
 #### Using react-router-dom
 
