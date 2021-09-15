@@ -30,6 +30,7 @@ Users should be able to:
 
 ### Screenshot
 
+![screenshot](./screenshot.gif)
 ![screenshot](./screenshot.jpg)
 
 ### Links
