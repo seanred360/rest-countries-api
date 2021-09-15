@@ -436,7 +436,7 @@ Link:focus, Link:hover, Link:visited, Link:link, Link:active {
   }
 }
 
-.btn {
+.pagination-btns-container .btn {
   border-radius: 100%;
   font-size: 0.9rem;
   width: 3rem;
@@ -445,8 +445,8 @@ Link:focus, Link:hover, Link:visited, Link:link, Link:active {
   transition: all 0.3s ease;
 }
 
-.btn.next,
-.btn.prev {
+.pagination-btns-container .btn.next,
+.pagination-btns-container .btn.prev {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -455,7 +455,7 @@ Link:focus, Link:hover, Link:visited, Link:link, Link:active {
   border: none;
 }
 
-.active {
+.pagination-btns-container .active {
   width: 4rem;
   height: 4rem;
 }
