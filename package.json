@@ -2,13 +2,10 @@
   "name": "rest-countries-api",
   "version": "0.1.0",
   "private": true,
-<<<<<<< HEAD
   "engines": {
     "npm": "6.14.13",
     "node": "14.17.0"
   },
-=======
->>>>>>> parent of a8df741 (Added 404 page styling)
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -61,5 +58,5 @@
   "bugs": {
     "url": "https://github.com/seanred360/rest-countries-api/issues"
   },
-  "homepage": "."
+  "homepage": "./"
 }
