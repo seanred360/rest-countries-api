@@ -41,23 +41,6 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
-  a.border-country-btn {
-    display: inline-block;
-    text-align: center;
-    min-width: 96px;
-    min-height: 26px;
-    border: none;
-    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.104931);
-    border-radius: 2px;
-    @include line-height(16);
-    font-weight: 300;
-    margin-bottom: 10px;
-
-    &:not(:last-child) {
-      margin-right: 10px;
-    }
-  }
-
   .pagination-btns-container {
     .btn {
       &.active {

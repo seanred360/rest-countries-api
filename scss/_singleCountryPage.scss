@@ -36,16 +36,14 @@
     }
 
     .country-stats-groups {
-      .country-name {
-        margin: 0;
-        margin-top: 44px;
-        margin-bottom: 16px;
-      }
-
-      p {
-        @include line-height(32);
-        margin: 0;
-      }
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      grid-template-areas:
+        "top top"
+        "topLeft  topRight"
+        "bottom  bottom";
 
       @include respond-below(sm) {
         .grid-area-1,
@@ -56,58 +54,53 @@
         }
       }
 
-      @include respond-above(sm) {
-        display: grid;
-        align-items: center;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
-        grid-template-areas:
-          "top top"
-          "topLeft  topRight"
-          "bottom  bottom";
+      .grid-area-1 {
+        grid-area: top;
+      }
+      .grid-area-2 {
+        grid-area: topLeft;
+        margin-bottom: 34px;
+      }
+      .grid-area-3 {
+        grid-area: topRight;
+        margin-bottom: auto;
+      }
+      .grid-area-4 {
+        grid-area: bottom;
 
-        .grid-area-1 {
-          grid-area: top;
+        .border-countries-label {
+          @include font-size(16);
+          @include line-height(24);
+          margin-bottom: 1rem;
+          margin-right: 1rem;
         }
-        .grid-area-2 {
-          grid-area: topLeft;
-          margin-bottom: 34px;
-        }
-        .grid-area-3 {
-          grid-area: topRight;
-          margin-bottom: auto;
-        }
-        .grid-area-4 {
-          grid-area: bottom;
-          //margin-bottom: 60px;
 
-          .border-countries-label {
-            @include font-size(16);
-            @include line-height(24);
-            margin-bottom: 1rem;
-            margin-right: 1rem;
+        .border-countries-btns {
+          display: flex;
+          flex-wrap: wrap;
+          .border-country-btn {
+            width: 96px;
+            height: 26px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border: none;
+            box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.104931);
+            border-radius: 2px;
+            text-align: center;
+            font-weight: 300;
           }
-
-          //handled in GlobalStyles.jsx because it overrides these
-
-          // .border-countries-btns {
-          //   a.border-country-btn {
-          //     display: inline-block;
-          //     text-align: center;
-          //     min-width: 96px;
-          //     min-height: 26px;
-          //     border: none;
-          //     box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.104931);
-          //     border-radius: 2px;
-          //     @include line-height(16);
-          //     font-weight: 300;
-
-          //     &:not(:last-child) {
-          //       margin-right: 10px;
-          //     }
-          //   }
-          // }
         }
+      }
+
+      .country-name {
+        margin: 0;
+        margin-top: 44px;
+        margin-bottom: 16px;
+      }
+
+      p {
+        @include line-height(32);
+        margin: 0;
       }
     }
   }
