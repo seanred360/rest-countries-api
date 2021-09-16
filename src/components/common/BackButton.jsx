@@ -5,13 +5,15 @@ import { HiArrowNarrowLeft } from "react-icons/hi";
 const BackButton = () => {
   const history = useHistory();
 
-  const routeChange = () => {
-    let path = "/";
-    history.push(path);
+  const goBack = () => {
+    history.goBack();
   };
 
   return (
-    <button className="back-button foreground-color flex flex-ai-c" aria-label="Go Back" onClick={routeChange}>
+    <button
+      className="back-button foreground-color hover-color flex flex-ai-c"
+      onClick={goBack}
+    >
       <HiArrowNarrowLeft />
       Back
     </button>

@@ -47,7 +47,7 @@ const Pagination = ({ itemsCount, pageSize, currentPage, onPageChange }) => {
   return (
     <div className="pagination-btns-container">
       <button
-        className="btn prev foreground-color" aria-label="Previous page"
+        className="btn prev foreground-color hover-color" aria-label="Previous page"
         onClick={() => onPageChange("prev", pageData.totalPages)}
       >
         <GoChevronLeft />
@@ -57,8 +57,8 @@ const Pagination = ({ itemsCount, pageSize, currentPage, onPageChange }) => {
           key={pageNumber}
           className={
             pageNumber === currentPage
-              ? "btn foreground-color active"
-              : "btn foreground-color"
+              ? "btn foreground-color hover-color active"
+              : "btn foreground-color hover-color"
           } aria-label={"Page " + pageNumber}
           onClick={() => onPageChange(pageNumber, pageData.totalPages)}
         >
@@ -66,7 +66,7 @@ const Pagination = ({ itemsCount, pageSize, currentPage, onPageChange }) => {
         </button>
       ))}
       <button
-        className="btn next foreground-color" aria-label="Next page"
+        className="btn next foreground-color hover-color" aria-label="Next page"
         onClick={() => onPageChange("next", pageData.totalPages)}
       >
         <GoChevronRight />

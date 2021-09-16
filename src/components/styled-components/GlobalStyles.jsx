@@ -13,6 +13,12 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.text};
   }
 
+  .hover-color{
+    &:hover {
+      box-shadow: 0px 0px 7px 2px ${({ theme }) => theme.hover};
+    }
+  }
+
   .dropdown {
     .dropdown-menu {
       .dropdown-item {

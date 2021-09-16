@@ -2,7 +2,7 @@ import React from "react";
 
 const CountryBox = ({ flag, name, population, region, capital }) => {
   return (
-    <div className="country-box foreground-color">
+    <div className="country-box foreground-color hover-color">
       <img src="" className="screen-reader-only" alt="A country's flag" />
       <div
         className="flag"

@@ -117,16 +117,28 @@ Link:focus, Link:hover, Link:visited, Link:link, Link:active {
   }
 }
 
-.navbar .title {
+.navbar .logo-home-button {
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 800;
+  padding: 6px 24px;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar .logo-home-button:hover {
+  font-size: 0.90625rem;
 }
 
 @media (min-width: 992px) {
-  .navbar .title {
+  .navbar .logo-home-button {
     font-size: 1.5rem;
     line-height: 2.0625rem;
+  }
+  .navbar .logo-home-button:hover {
+    font-size: 1.53125rem;
   }
 }
 
@@ -135,7 +147,14 @@ Link:focus, Link:hover, Link:visited, Link:link, Link:active {
   line-height: 1rem;
   font-weight: 600;
   border: none;
+  border-radius: 2px;
   background: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar .theme-toggler:hover {
+  font-size: 0.78125rem;
 }
 
 @media (min-width: 992px) {
@@ -143,6 +162,9 @@ Link:focus, Link:hover, Link:visited, Link:link, Link:active {
     font-size: 1rem;
     line-height: 1.375rem;
     font-weight: 600;
+  }
+  .navbar .theme-toggler:hover {
+    font-size: 1.03125rem;
   }
 }
 
@@ -230,7 +252,7 @@ Link:focus, Link:hover, Link:visited, Link:link, Link:active {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 1.5rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -238,6 +260,8 @@ Link:focus, Link:hover, Link:visited, Link:link, Link:active {
   width: 56px;
   transition: transform 0.3s ease;
   color: #848484;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .dropdown {
@@ -264,6 +288,19 @@ Link:focus, Link:hover, Link:visited, Link:link, Link:active {
   border-radius: 5px;
   text-align: left;
   line-height: 1.25rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.dropdown .dropdown-toggle:hover {
+  font-size: 0.78125rem;
+  font-style: oblique;
+}
+
+@media (min-width: 768px) {
+  .dropdown .dropdown-toggle:hover {
+    font-size: 0.90625rem;
+  }
 }
 
 .dropdown .dropdown-toggle .chevron-icon {
@@ -287,6 +324,7 @@ Link:focus, Link:hover, Link:visited, Link:link, Link:active {
   border-radius: 5px;
   text-align: left;
   line-height: 1.375rem;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
@@ -302,6 +340,19 @@ Link:focus, Link:hover, Link:visited, Link:link, Link:active {
   margin: 0;
   border: none;
   text-align: left;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.dropdown .dropdown-menu .dropdown-item:hover {
+  font-size: 0.78125rem;
+  font-style: oblique;
+}
+
+@media (min-width: 768px) {
+  .dropdown .dropdown-menu .dropdown-item:hover {
+    font-size: 0.90625rem;
+  }
 }
 
 .grid-squares {
@@ -346,6 +397,7 @@ Link:focus, Link:hover, Link:visited, Link:link, Link:active {
   background: white;
   box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.0294384);
   border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
 .country-box .flag {
@@ -433,6 +485,8 @@ Link:focus, Link:hover, Link:visited, Link:link, Link:active {
   text-align: left;
   box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.293139);
   border-radius: 2px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 @media (min-width: 1200px) {
@@ -510,10 +564,11 @@ Link:focus, Link:hover, Link:visited, Link:link, Link:active {
   margin-right: 10px;
   margin-bottom: 10px;
   border: none;
-  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.104931);
   border-radius: 2px;
   text-align: center;
   font-weight: 300;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .single-country-page .page-container .country-stats-groups .country-name {

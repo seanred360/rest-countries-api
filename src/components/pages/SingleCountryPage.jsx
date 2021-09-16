@@ -82,7 +82,7 @@ const SingleCountryPage = () => {
                 <Link
                   to={`${border}`}
                   key={border}
-                  className="border-country-btn foreground-color"
+                  className="border-country-btn foreground-color hover-color"
                 >
                   {border}
                 </Link>

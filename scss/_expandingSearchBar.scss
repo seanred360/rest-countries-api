@@ -34,11 +34,6 @@
     .search-btn {
       //transform: translateX(75vw);
       background-color: rgba(255, 255, 255, 0);
-
-      @include respond-above(lg) {
-        // 480px width / 56px width
-        //transform: translateX(424px);
-      }
     }
   }
 
@@ -59,7 +54,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 24px;
+    @include font-size(24);
     position: absolute;
     top: 0;
     left: 0;
@@ -67,5 +62,7 @@
     width: 56px;
     transition: transform 0.3s ease;
     color: #848484;
+    transition: all 0.3s ease;
+    cursor: pointer;
   }
 }

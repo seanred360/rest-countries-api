@@ -21,6 +21,19 @@
     border-radius: 5px;
     text-align: left;
     @include line-height(20);
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      @include font-size(12.5);
+      font-style: oblique;
+    }
+
+    @include respond-above(md) {
+      &:hover {
+        @include font-size(14.5);
+      }
+    }
 
     .chevron-icon {
       width: 10px;
@@ -42,6 +55,7 @@
     border-radius: 5px;
     text-align: left;
     @include line-height(22);
+    cursor: pointer;
 
     @include respond-above(md) {
       @include line-height(38);
@@ -54,6 +68,19 @@
       margin: 0;
       border: none;
       text-align: left;
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        @include font-size(12.5);
+        font-style: oblique;
+      }
+
+      @include respond-above(md) {
+        &:hover {
+          @include font-size(14.5);
+        }
+      }
     }
   }
 }

@@ -23,14 +23,14 @@ class ExpandingSearchBar extends Component {
       <div className={"search " + this.state.active}>
         <input
           type="search"
-          className="input foreground-color"
+          className="input foreground-color hover-color"
           placeholder="Search for a country..."
           onChange={(e) => {
             this.handleOnChange(e);
           }}
           onKeyPress={(event) => event.key === "Enter" && this.handleKeyPress()}
         ></input>
-        <button className="search-btn" aria-label="Open Search">
+        <button className="search-btn hover-color" aria-label="Open Search">
           <BiSearchAlt2 className="search-icon" onClick={this.handleOnClick} />
         </button>
       </div>

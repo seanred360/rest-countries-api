@@ -5,6 +5,7 @@ import { GlobalStyles } from "./components/styled-components/GlobalStyles";
 import { lightTheme, darkTheme } from "./components/styled-components/Themes";
 import ThemeToggler from "./components/styled-components/ThemeToggler";
 import Main from "./components/Main";
+import LogoHomeButton from "./components/common/LogoHomebutton";
 
 const App = () => {
   const [theme, themeToggler, mountedComponent] = useDarkMode();
@@ -16,8 +17,10 @@ const App = () => {
       <>
         <GlobalStyles />
         <nav className="navbar flex flex-jc-sb flex-ai-c foreground-color">
-          <span className="title">Where in the world?</span>
-          <ThemeToggler theme={theme} toggleTheme={themeToggler} />
+          <LogoHomeButton />
+          <div className="flex">
+            <ThemeToggler theme={theme} toggleTheme={themeToggler} />
+          </div>
         </nav>
         <div className="App">
           <Main />

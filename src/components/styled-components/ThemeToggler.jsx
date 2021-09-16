@@ -24,7 +24,7 @@ const ThemeToggler = ({ theme, toggleTheme }) => {
     <button
       onClick={toggleTheme}
       aria-label="Toggle theme"
-      className="theme-toggler foreground-color flex flex-jc-c flex-ai-c"
+      className="theme-toggler foreground-color hover-color flex flex-jc-c flex-ai-c"
     >
       <IoMoonOutline className="io-moon-outline" />
       Dark Mode
