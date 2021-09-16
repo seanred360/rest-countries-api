@@ -635,4 +635,67 @@ Link:focus, Link:hover, Link:visited, Link:link, Link:active {
   box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.293139);
   border-radius: 2px;
 }
+
+.Spinner {
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  justify-content: center;
+  animation-name: fadeIn;
+  animation-duration: 1200ms;
+  animation-fill-mode: forwards;
+}
+
+.Spinner .spinner-dot {
+  width: 12px;
+  height: 12px;
+  background: #232329;
+  border-radius: 50px;
+  margin: 3px;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.Spinner .spinner-dot:nth-child(1) {
+  animation-name: explode;
+  animation-delay: 0;
+}
+
+.Spinner .spinner-dot:nth-child(2) {
+  animation-name: explode;
+  animation-delay: 250ms;
+}
+
+.Spinner .spinner-dot:nth-child(3) {
+  animation-name: explode;
+  animation-delay: 500ms;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+}
 /*# sourceMappingURL=style.css.map */

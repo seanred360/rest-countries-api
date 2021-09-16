@@ -3,7 +3,7 @@ import BackButton from "../common/BackButton";
 
 const NotFound = () => {
   return (
-    <section className="page-404 forground-color">
+    <section className="page-404 forground-color hover-color">
       <div className="caveman-image">
         <h1 className="text-404">404</h1>
       </div>

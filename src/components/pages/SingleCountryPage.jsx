@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { useRouteMatch, useHistory, Link } from "react-router-dom";
 import axios from "axios";
 import BackButton from "../common/BackButton";
+import Spinner from "../common/Spinner";
+import NotFound from "./NotFound";
 import getLanguages from "../../utils/getLanguages";
 import getCurrencies from "../../utils/getCurrencies";
 
@@ -29,8 +31,8 @@ const SingleCountryPage = () => {
       });
   }, [history, routeMatch.params.id]);
 
-  if (!isLoaded) return <h1>Loading Data.........</h1>;
-  else if (isLoaded && error) return <h1>error</h1>;
+  if (!isLoaded) return <Spinner />;
+  else if (isLoaded && error) return <NotFound />;
 
   return (
     <div className="single-country-page">

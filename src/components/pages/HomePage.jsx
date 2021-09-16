@@ -3,6 +3,8 @@ import axios from "axios";
 import { paginate } from "../../utils/paginate";
 import { sort } from "../../utils/sort";
 import { toTitleCase } from "../../utils/toTitleCase";
+import Spinner from "../common/Spinner";
+import NotFound from "./NotFound";
 import ExpandingSearchBar from "../common/ExpandingSearchBar";
 import DropDownBox from "../common/DropDownBox";
 import GridSquares from "../GridSquares";
@@ -67,12 +69,7 @@ class HomePage extends Component {
     const sorted = sort(sortCategory, sortValue, allCountries);
 
     // return a single page of countries sliced from the total collection of countries
-    const countries = paginate(
-      sorted,
-      currentPage,
-      pageSize,
-      currentPage
-    );
+    const countries = paginate(sorted, currentPage, pageSize, currentPage);
 
     // return total number of countries that match the sort parameters,
     // and a single page of countries to be sent to a component for display
@@ -83,8 +80,8 @@ class HomePage extends Component {
     const { regions, pageSize, currentPage, isLoaded, error } = this.state;
     const { totalCount, data: countries } = this.getPagedData();
 
-    if (!isLoaded) return <h1>Loading..................</h1>;
-    if (error) return <h1>ERROR CANNOT CONNECT TO API</h1>;
+    if (!isLoaded) return <Spinner />;
+    if (error) return <NotFound />;
     if (isLoaded && !error)
       return (
         <main>
