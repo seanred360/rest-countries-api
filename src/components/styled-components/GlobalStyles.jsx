@@ -37,13 +37,8 @@ export const GlobalStyles = createGlobalStyle`
       color: ${({ theme }) => theme.searchBarText};
     }
 
-    &.active .input {
+    &:focus-within {
       background: ${({ theme }) => theme.foregroundColor};
-      color: ${({ theme }) => theme.searchBarText};
-
-      &::placeholder {
-        color: ${({ theme }) => theme.searchBarText};
-      }
     }
   }
 

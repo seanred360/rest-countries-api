@@ -1,68 +1,83 @@
-.search {
-  position: relative;
-  margin: 1.5rem 0px;
+:root {
+  --size: 60px;
+}
 
-  // override default placeholder text color
+.search {
+  max-width: 30rem;
+  border: 2px solid var(--clr-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3125rem;
+  //border-radius: 100px;
+  overflow: hidden;
+  font-size: 1.25em;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  transition: width 450ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  padding: 6px;
+
+  // override default placeholder text
   ::placeholder,
   :-ms-input-placeholder,
   ::-ms-input-placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     /* Internet Explorer 10-11 */
     /* Microsoft Edge */
-    color: #848484;
+    //color: #848484;
     font-family: "Nunito Sans", sans-serif;
     @include font-size(14);
     @include line-height(20);
     opacity: 1; /* Firefox */
   }
+}
 
-  &.active {
-    .input {
-      //mobile
-      width: 100%;
-      padding: 0.875rem;
-      padding-left: 4.625rem;
-      border: none;
+.search-input {
+  border: 0;
+  padding: 0.25em 1em;
+  flex-grow: 1;
+  outline: 0;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  opacity: 0;
+  cursor: pointer;
+}
 
-      //desktop
-      @include respond-above(lg) {
-        width: 30rem;
-        padding: 1.125rem;
-        padding-left: 4.4375rem;
-      }
-    }
-    .search-btn {
-      //transform: translateX(75vw);
-      background-color: rgba(255, 255, 255, 0);
-    }
-  }
+.search-btn {
+  font-size: 1.5rem;
+  margin-left: auto;
+  background: 0;
+  border: 0;
+  cursor: pointer;
+  border-radius: 0.3125rem;
+  //border-radius: 50%;
+  transition: background 200ms ease-out;
+  width: calc(var(--size) - 10px);
+  height: calc(var(--size) - 10px);
+}
 
-  .input {
-    border: none;
-    font-size: 1.125rem;
-    padding: 0.9375rem;
-    height: 3.5rem;
-    width: 3.5rem;
-    transition: width 0.3s ease;
+.search:focus-within {
+  width: 100%;
 
-    box-shadow: 0px 0.125rem 0.5625rem rgba(0, 0, 0, 0.0532439);
-    border: none;
-    border-radius: 5px;
+  .search-input {
+    opacity: 1;
+    z-index: initial;
+    cursor: initial;
+    width: calc(100% - var(--size));
   }
 
   .search-btn {
-    border: none;
-    border-radius: 0.3125rem;
-    cursor: pointer;
-    @include font-size(24);
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 3.5rem;
-    width: 3.5rem;
-    transition: transform 0.3s ease;
-    color: #848484;
-    transition: all 0.3s ease;
-    cursor: pointer;
+    background: var(--clr-primary);
+
+    &:hover,
+    &:focus {
+      outline: 0;
+    }
   }
 }

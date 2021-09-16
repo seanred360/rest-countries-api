@@ -6,7 +6,9 @@ const LogoHomeButton = () => {
 
   const routeChange = () => {
     let path = "/";
-    history.push(path);
+    // if the user is on the homepage already, reload the page
+    if (history.location.pathname === path) window.location.reload(false);
+    else history.push(path);
   };
 
   return (

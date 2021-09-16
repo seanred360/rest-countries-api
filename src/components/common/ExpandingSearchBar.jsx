@@ -2,13 +2,6 @@ import React, { Component } from "react";
 import { BiSearchAlt2 } from "react-icons/bi";
 
 class ExpandingSearchBar extends Component {
-  state = { active: "", searchInput: "" };
-
-  handleOnClick = () => {
-    const setActive = !this.state.active ? "active" : "";
-    this.setState({ active: setActive });
-  };
-
   handleKeyPress = () => {
     this.props.handleSortCategorySelect("name", this.state.searchInput);
   };
@@ -20,10 +13,10 @@ class ExpandingSearchBar extends Component {
 
   render() {
     return (
-      <div className={"search " + this.state.active}>
+      <div className="search hover-color">
         <input
           type="search"
-          className="input foreground-color hover-color"
+          className="search-input foreground-color"
           placeholder="Search for a country..."
           onChange={(e) => {
             this.handleOnChange(e);
@@ -31,7 +24,7 @@ class ExpandingSearchBar extends Component {
           onKeyPress={(event) => event.key === "Enter" && this.handleKeyPress()}
         ></input>
         <button className="search-btn hover-color" aria-label="Open Search">
-          <BiSearchAlt2 className="search-icon" onClick={this.handleOnClick} />
+          <BiSearchAlt2 className="search-icon" />
         </button>
       </div>
     );
