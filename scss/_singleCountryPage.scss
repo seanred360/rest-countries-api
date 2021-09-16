@@ -1,5 +1,5 @@
 .single-country-page {
-  margin: 0px 28px;
+  margin: 0px 1.75rem;
   max-width: 1440px;
 
   @include respond-above(xxl) {
@@ -8,12 +8,12 @@
   }
 
   .back-button {
-    margin-bottom: 24px;
-    padding: 6px 24px;
+    margin-bottom: 1.5rem;
+    padding: 0.375rem 1.5rem;
     border: none;
     text-align: left;
-    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.293139);
-    border-radius: 2px;
+    box-shadow: 0px 0px 0.4375rem rgba(0, 0, 0, 0.293139);
+    border-radius: 0.125rem;
     transition: all 0.3s ease;
     cursor: pointer;
   }
@@ -31,10 +31,10 @@
     }
 
     .country-flag {
-      margin: 44px 0;
-      border-radius: 5px;
+      margin: 2.75rem 0;
+      border-radius: 0.3125rem;
       width: 100%;
-      max-width: 560px;
+      max-width: 35rem;
     }
 
     .country-stats-groups {
@@ -48,11 +48,12 @@
         "bottom  bottom";
 
       @include respond-below(sm) {
+        display: block;
         .grid-area-1,
         .grid-area-2,
         .grid-area-3,
         .grid-area-4 {
-          margin-bottom: 32px;
+          margin-bottom: 2rem;
         }
       }
 
@@ -61,7 +62,7 @@
       }
       .grid-area-2 {
         grid-area: topLeft;
-        margin-bottom: 34px;
+        margin-bottom: 2.125rem;
       }
       .grid-area-3 {
         grid-area: topRight;
@@ -69,6 +70,10 @@
       }
       .grid-area-4 {
         grid-area: bottom;
+
+        @include respond-below(sm) {
+          margin-top: 1.75rem;
+        }
 
         .border-countries-label {
           @include font-size(16);
@@ -81,12 +86,12 @@
           display: flex;
           flex-wrap: wrap;
           .border-country-btn {
-            width: 96px;
-            height: 26px;
-            margin-right: 10px;
-            margin-bottom: 10px;
+            width: 6rem;
+            height: 1.625rem;
+            margin-right: 0.625rem;
+            margin-bottom: 0.625rem;
             border: none;
-            border-radius: 2px;
+            border-radius: 0.125rem;
             text-align: center;
             font-weight: 300;
             transition: all 0.3s ease;
@@ -97,8 +102,8 @@
 
       .country-name {
         margin: 0;
-        margin-top: 44px;
-        margin-bottom: 16px;
+        margin-top: 2.75rem;
+        margin-bottom: 1rem;
       }
 
       p {

@@ -10,9 +10,9 @@
 
   .caveman-image {
     background-image: url("https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif");
-    height: 400px;
+    height: 25rem;
     width: 100%;
-    margin: 20px 0px 10px;
+    margin: 1.25rem 0px 0.625rem;
     background-position: center;
     background-repeat: no-repeat;
 
@@ -27,31 +27,31 @@
 
   .content-box-404 {
     margin: 0;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 
     .looks-like-you-are-lost {
       @include font-size(30);
       font-weight: 500;
-      margin-top: 20px;
-      margin-bottom: 10px;
+      margin-top: 1.25rem;
+      margin-bottom: 0.625rem;
     }
 
     p {
       @include font-size(14);
       font-weight: 300;
       margin: 0;
-      margin-bottom: 10px;
+      margin-bottom: 0.625rem;
     }
 
     .back-button {
-      margin-top: 20px;
+      margin-top: 1.25rem;
       margin-right: auto;
       margin-left: auto;
-      padding: 10px 30px;
+      padding: 0.625rem 1.875rem;
       border: none;
       text-align: left;
-      box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.293139);
-      border-radius: 2px;
+      box-shadow: 0px 0px 0.4375rem rgba(0, 0, 0, 0.293139);
+      border-radius: 0.125rem;
     }
   }
 }

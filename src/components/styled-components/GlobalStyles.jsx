@@ -15,7 +15,7 @@ export const GlobalStyles = createGlobalStyle`
 
   .hover-color{
     &:hover {
-      box-shadow: 0px 0px 7px 2px ${({ theme }) => theme.hover};
+      box-shadow: 0px 0px 0.4375rem 0.125rem ${({ theme }) => theme.hover};
     }
   }
 

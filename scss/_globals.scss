@@ -43,7 +43,7 @@ p {
 }
 
 .container {
-  margin: 0px 16px;
+  margin: 0px 1rem;
   max-width: 1400px;
 
   @include respond-above(lg) {

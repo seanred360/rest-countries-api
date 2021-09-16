@@ -1,6 +1,6 @@
 .dropdown {
   //mobile styles
-  margin-top: 40px;
+  margin-top: 2.5rem;
   @include font-size(12);
 
   //desktop styles
@@ -11,14 +11,14 @@
   }
 
   .dropdown-toggle {
-    width: 200px;
-    height: 48px;
-    padding: 14px;
-    padding-left: 24px;
+    width: 12.5rem;
+    height: 3rem;
+    padding: 0.875rem;
+    padding-left: 1.5rem;
     outline: none;
     border: none;
-    box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
-    border-radius: 5px;
+    box-shadow: 0px 0.125rem 0.5625rem rgba(0, 0, 0, 0.0532439);
+    border-radius: 0.3125rem;
     text-align: left;
     @include line-height(20);
     transition: all 0.3s ease;
@@ -36,12 +36,12 @@
     }
 
     .chevron-icon {
-      width: 10px;
-      height: 10px;
+      width: 0.625rem;
+      height: 0.625rem;
     }
 
     @include respond-above(lg) {
-      height: 56px;
+      height: 3.5rem;
     }
   }
 
