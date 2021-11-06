@@ -18,7 +18,7 @@ const SingleCountryPage = () => {
   useEffect(() => {
     setIsLoaded(false);
     axios
-      .get(`https://restcountries.eu/rest/v2/alpha/${routeMatch.params.id}`)
+      .get(`https://restcountries.com/v2/alpha/${routeMatch.params.id}`)
       .then((response) => {
         setCountry(response.data);
         setIsLoaded(true);
@@ -80,15 +80,19 @@ const SingleCountryPage = () => {
           <div className="grid-area-4">
             <p className="border-countries-label">Border Countries: </p>
             <div className="border-countries-btns">
-              {country.borders.map((border) => (
-                <Link
-                  to={`${border}`}
-                  key={border}
-                  className="border-country-btn foreground-color hover-color"
-                >
-                  {border}
-                </Link>
-              ))}
+              {country.borders ? (
+                country.borders.map((border) => (
+                  <Link
+                    to={`${border}`}
+                    key={border}
+                    className="border-country-btn foreground-color hover-color"
+                  >
+                    {border}
+                  </Link>
+                ))
+              ) : (
+                <span>None</span>
+              )}
             </div>
           </div>
         </div>
