@@ -10,7 +10,7 @@ import getCurrencies from "../../utils/getCurrencies";
 const SingleCountryPage = () => {
   const [country, setCountry] = useState({});
   const [isLoaded, setIsLoaded] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(null);
   const routeMatch = useRouteMatch();
 
   useEffect(() => {
@@ -26,22 +26,17 @@ const SingleCountryPage = () => {
           setCountry(response.data);
         }
         setIsLoaded(true);
+      })
+      .catch((error) => {
+        setError(error);
+        setIsLoaded(true);
       });
-
-    // api doesnt return a proper error object this way anymore
-    // .catch((error) => {
-    //   setIsLoaded(true);
-    //   setError(error);
-    //   console.log("error" + error);
-    //   // redirect the user to the not found page
-    //   // history.replace("/not-found");
-    // });
 
     return () => controller?.abort();
   }, [routeMatch.params.id]);
 
   if (!isLoaded) return <Spinner />;
-  if (isLoaded && error === true) return <NotFound />;
+  if (isLoaded && error) return <NotFound />;
   else
     return (
       <div className="single-country-page">
