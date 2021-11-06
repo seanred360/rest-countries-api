@@ -1,6 +1,5 @@
-import React from "react";
 import { useState, useEffect } from "react";
-import { useRouteMatch, useHistory, Link } from "react-router-dom";
+import { useRouteMatch, Link } from "react-router-dom";
 import axios from "axios";
 import BackButton from "../common/BackButton";
 import Spinner from "../common/Spinner";
@@ -11,94 +10,104 @@ import getCurrencies from "../../utils/getCurrencies";
 const SingleCountryPage = () => {
   const [country, setCountry] = useState({});
   const [isLoaded, setIsLoaded] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(false);
   const routeMatch = useRouteMatch();
-  const history = useHistory();
 
   useEffect(() => {
-    setIsLoaded(false);
+    let controller = new AbortController();
     axios
-      .get(`https://restcountries.com/v2/alpha/${routeMatch.params.id}`)
-      .then((response) => {
-        setCountry(response.data);
-        setIsLoaded(true);
+      .get(`https://restcountries.com/v2/alpha/${routeMatch.params.id}`, {
+        signal: controller.signal,
       })
-      .catch((error) => {
-        setError(error);
+      .then((response) => {
+        if (response.data["status"]) {
+          setError(true);
+        } else {
+          setCountry(response.data);
+        }
         setIsLoaded(true);
-        // redirect the user to the not found page
-        history.replace("/not-found");
       });
-  }, [history, routeMatch.params.id]);
+
+    // api doesnt return a proper error object this way anymore
+    // .catch((error) => {
+    //   setIsLoaded(true);
+    //   setError(error);
+    //   console.log("error" + error);
+    //   // redirect the user to the not found page
+    //   // history.replace("/not-found");
+    // });
+
+    return () => controller?.abort();
+  }, [routeMatch.params.id]);
 
   if (!isLoaded) return <Spinner />;
-  else if (isLoaded && error) return <NotFound />;
+  if (isLoaded && error === true) return <NotFound />;
+  else
+    return (
+      <div className="single-country-page">
+        <BackButton />
 
-  return (
-    <div className="single-country-page">
-      <BackButton />
+        <div className="page-container">
+          <img
+            className="country-flag"
+            src={country.flag}
+            alt="Flag of the country"
+          />
 
-      <div className="page-container">
-        <img
-          className="country-flag"
-          src={country.flag}
-          alt="Flag of the country"
-        />
+          <div className="country-stats-groups">
+            <h2 className="grid-arena-1 country-name">{country.name}</h2>
+            <div className="grid-area-2">
+              <p>
+                Native Name: <span>{country.nativeName}</span>
+              </p>
+              <p>
+                Population: <span>{country.population.toLocaleString()}</span>
+              </p>
+              <p>
+                Region: <span>{country.region}</span>
+              </p>
+              <p>
+                Sub Region: <span>{country.subregion}</span>
+              </p>
+              <p>
+                Capital: <span>{country.capital}</span>
+              </p>
+            </div>
 
-        <div className="country-stats-groups">
-          <h2 className="grid-arena-1 country-name">{country.name}</h2>
-          <div className="grid-area-2">
-            <p>
-              Native Name: <span>{country.nativeName}</span>
-            </p>
-            <p>
-              Population: <span>{country.population.toLocaleString()}</span>
-            </p>
-            <p>
-              Region: <span>{country.region}</span>
-            </p>
-            <p>
-              Sub Region: <span>{country.subregion}</span>
-            </p>
-            <p>
-              Capital: <span>{country.capital}</span>
-            </p>
-          </div>
+            <div className="grid-area-3">
+              <p>
+                Top Level Domain: <span>{country.topLevelDomain}</span>
+              </p>
+              <p>
+                Currencies: <span>{getCurrencies(country)}</span>
+              </p>
+              <p>
+                Languages: <span>{getLanguages(country)}</span>
+              </p>
+            </div>
 
-          <div className="grid-area-3">
-            <p>
-              Top Level Domain: <span>{country.topLevelDomain}</span>
-            </p>
-            <p>
-              Currencies: <span>{getCurrencies(country)}</span>
-            </p>
-            <p>
-              Languages: <span>{getLanguages(country)}</span>
-            </p>
-          </div>
-
-          <div className="grid-area-4">
-            <p className="border-countries-label">Border Countries: </p>
-            <div className="border-countries-btns">
-              {country.borders ? (
-                country.borders.map((border) => (
-                  <Link
-                    to={`${border}`}
-                    key={border}
-                    className="border-country-btn foreground-color hover-color"
-                  >
-                    {border}
-                  </Link>
-                ))
-              ) : (
-                <span>None</span>
-              )}
+            <div className="grid-area-4">
+              <p className="border-countries-label">Border Countries: </p>
+              <div className="border-countries-btns">
+                {country.borders ? (
+                  country.borders.map((border) => (
+                    <Link
+                      to={`${border}`}
+                      key={border}
+                      className="border-country-btn foreground-color hover-color"
+                    >
+                      {border}
+                    </Link>
+                  ))
+                ) : (
+                  <span>None</span>
+                )}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
 };
 
 export default SingleCountryPage;

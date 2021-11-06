@@ -1,5 +1,3 @@
-import React from "react";
-
 const CountryBox = ({ flag, name, population, region, capital }) => {
   return (
     <div className="country-box foreground-color hover-color">

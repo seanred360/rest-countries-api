@@ -1,4 +1,3 @@
-import React from "react";
 import { func, string } from "prop-types";
 import { IoMoonOutline } from "react-icons/io5";
 // import styled from "styled-components";
